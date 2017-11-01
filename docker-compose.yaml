@@ -1,0 +1,9 @@
+version: '2'
+services:
+  grav:
+    restart: unless-stopped
+    image: opsforge/grav-docker:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./data:/var/www/html
