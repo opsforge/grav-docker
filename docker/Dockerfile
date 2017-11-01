@@ -3,6 +3,8 @@ FROM php:7.1-apache
 # Image based on the Wordpress docker image from:
 
 MAINTAINER opsforge.io
+LABEL name="grav-docker"
+LABEL version="1.0.0"
 
 # install the PHP extensions we need
 RUN set -ex; \
@@ -16,6 +18,7 @@ RUN set -ex; \
     zlib1g-dev \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
+  apt-get clean && \
 	\
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
 	docker-php-ext-install gd zip opcache
@@ -52,6 +55,8 @@ COPY docker-entrypoint.sh /
 
 RUN chmod +x /docker-entrypoint.sh && \
   chown root:root /docker-entrypoint.sh
+
+EXPOSE 80
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
