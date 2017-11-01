@@ -6,3 +6,5 @@ if ! [ -e index.php -a -e bin/grav ]; then
   chown -R www-data:www-data $PWD
   echo "Done."
 fi
+
+exec "$@"
