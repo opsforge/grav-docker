@@ -41,11 +41,11 @@ VOLUME /var/www/html
 ENV SOURCE="/usr/src/grav"
 
 RUN set -ex; \
-  wget https://getgrav.org/download/core/grav-admin/latest \
-  unzip latest \
-  mkdir -p "$SOURCE" \
-  cp -r grav-admin/. "$SOURCE" \
-  rm -rf grav-admin latest \
+  wget https://getgrav.org/download/core/grav-admin/latest && \
+  unzip latest && \
+  mkdir -p "$SOURCE" && \
+  cp -r grav-admin/. "$SOURCE" && \
+  rm -rf grav-admin latest && \
   chown -R www-data:www-data "$SOURCE"
 
 COPY docker-entrypoint.sh /usr/local/bin/
