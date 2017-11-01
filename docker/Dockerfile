@@ -48,7 +48,10 @@ RUN set -ex; \
   rm -rf grav-admin latest && \
   chown -R www-data:www-data "$SOURCE"
 
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY docker-entrypoint.sh /
 
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+RUN chmod +x /docker-entrypoint.sh && \
+  chown root:root /docker-entrypoint.sh
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
