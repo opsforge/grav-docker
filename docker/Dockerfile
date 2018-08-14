@@ -1,10 +1,10 @@
-FROM php:7.1-apache
+FROM php:7.2-apache
 
 # Image based on the Wordpress docker image from:
 
 MAINTAINER opsforge.io
 LABEL name="grav-docker"
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 
 # install the PHP extensions we need
 RUN set -ex; \
