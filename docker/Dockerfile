@@ -14,7 +14,7 @@ RUN set -ex; \
     wget \
     unzip \
 		libjpeg-dev \
-		libpng12-dev \
+		libpng-dev \
     zlib1g-dev \
 	; \
 	rm -rf /var/lib/apt/lists/*; \
