@@ -1,5 +1,3 @@
-Docker CI Status:
-[ ![Codeship Status for opsforgeio/grav-docker](https://app.codeship.com/projects/985e9c40-a188-0135-1051-1ac528f51f8c/status?branch=master)](https://app.codeship.com/projects/254363)
 Image States on Hub:
 
  - grav: [![](https://images.microbadger.com/badges/image/opsforge/grav-docker.svg)](https://hub.docker.com/r/opsforge/grav-docker/ "Grav Docker Image")
