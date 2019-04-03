@@ -4,24 +4,23 @@ FROM php:7.3-apache
 
 MAINTAINER opsforge.io
 LABEL name="grav-docker"
-LABEL version="1.1.0"
+LABEL version="1.1.1"
 
 # install the PHP extensions we need
 RUN set -ex; \
-	\
-	apt-get update; \
-	apt-get install -y \
+    apt-get update; \
+    apt-get install -y \
     wget \
     unzip \
-		libjpeg-dev \
-		libpng-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libzip-dev \
     zlib1g-dev \
-	; \
-	rm -rf /var/lib/apt/lists/*; \
-  apt-get clean && \
-	\
-	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
-	docker-php-ext-install gd zip opcache
+    ; \
+    rm -rf /var/lib/apt/lists/*; \
+    apt-get clean && \
+    docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
+    docker-php-ext-install gd zip opcache
 # TODO consider removing the *-dev deps and only keeping the necessary lib* packages
 
 # set recommended PHP.ini settings
