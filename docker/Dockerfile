@@ -4,7 +4,7 @@ FROM php:7.3-apache
 
 MAINTAINER opsforge.io
 LABEL name="grav-docker"
-LABEL version="1.1.1"
+LABEL version="1.7.8"
 
 # install the PHP extensions we need
 RUN set -ex; \
